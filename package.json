@@ -1,0 +1,22 @@
+{
+  "name": "fcdo-design-system",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "concurrently \"nodemon .\" \"npm run scss\"",
+    "build": "npm run scss",
+    "scss": "sass --watch --load-path=node_modules assets/scss/fcdo-design-system.scss:assets/css/fcdo-design-system.min.css fcdo-frontend/fcdo-frontend.scss:assets/css/fcdo-frontend.min.css  --no-source-map --style=compressed"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "express": "^5.1.0",
+    "govuk-frontend": "^5.11.0",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
+  }
+}

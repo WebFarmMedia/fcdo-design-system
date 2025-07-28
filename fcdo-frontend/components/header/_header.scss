@@ -1,0 +1,24 @@
+.fcdo-header {
+    background-color: map-get($fcdo-colours, "fcdo-blue");
+
+    &__container {
+        display: flex;
+    }
+
+    &__logo {
+        width: 175px;
+        padding-top: map-get($fcdo-spacing, "2");
+        padding-bottom: map-get($fcdo-spacing, "2");
+    }
+
+    &__service-name {
+        margin-left: auto;
+        padding-top: map-get($fcdo-spacing, "2");
+        padding-bottom: map-get($fcdo-spacing, "2");
+        color: #fff;
+    }
+
+    &__link {
+        display: block;
+    }
+}
