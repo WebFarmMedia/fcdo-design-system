@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>
     
-    FCDO Design System
+    FCDO Design System Styles
 
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -60,8 +60,8 @@
       <div class="govuk-grid-row govuk-!-margin-bottom-3">
         <div class="govuk-grid-column-two-thirds">
           
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">FCDO Design System</h1>
-    <p class="govuk-body">The DesignOps team supports design teams to work effectively and efficiently, with standards, guidance, and support.</p>
+    <span class="govuk-caption-xl">Design system</span>
+    <h1 class="govuk-heading-xl">Styles</h1>
 
         </div>
       </div>
@@ -79,46 +79,102 @@
         
         <div class="govuk-grid-column-full">
           
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
-        <h3 class="govuk-heading-l">What is a design system?</h3>
-        <p class="govuk-body">A design system is a collection of reusable components, guidelines, and standards that help teams create consistent, scalable, and efficient designs across a product or brand. </p>
-        <a class="govuk-body govuk-link" href="/about-design-systems">Read about Design Systems</a>
-    </div>
-    <div class="govuk-grid-column-full">
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l govuk-!-margin-top-0">
-    </div>
-</div>
+    <h2 class="govuk-heading-l">Styles</h2>
+    <p class="govuk-body">In the new FCDO Design System, CSS styles are designed to be consistent, reusable, and scalable, ensuring that all government services provided by the department follow the same visual and functional guidelines.</p>
+    <p class="govuk-body"> Here's how the CSS styles work in the new FCDO design system:</p>
+    <h3 class="govuk-heading-s">Single CSS file</h3>
+    <p class="govuk-body">The FCDO Design System, shall use a single CSS file sits on top of the <a href="https://design-system.service.gov.uk/styles/" target="_blank" class="govuk-link">GOV.UK Design System styles</a> to apply FCDO-specific branding, styling, and enhancements. This file ensures that the core GOV.UK styles remain intact, while introducing custom styles that reflect the FCDO's unique requirements.</p>
 
-<h3 class="govuk-heading-l">FCDO design system</h3>
+    <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary fcdo-details__summary">
+            <span class="govuk-details__summary-text">Extends GOV.UK design system</span>
+        </summary>
+        <div class="govuk-details__text">
+            <p class="govuk-body">
+                The FCDO CSS file builds on the existing GOV.UK Frontend styles, leveraging its typography, grid system, and components.
+            </p>
+            <p class="govuk-body">Instead of modifying GOV.UK styles directly, the FCDO layer overrides and extends them, ensuring future compatibility when GOV.UK updates its design system.</p>
+        </div>
+    </details>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third-from-desktop">
-        <div class="fcdo-card"  onclick="window.location.href='/design-system/styles'">
-            <div class="fcdo-card__container">
-                <h2 class="govuk-heading-m fcdo-card__title">Styles</h2>
-                <p class="fcdo-card__description">Styles for typography, colour and more to make services look like FDCO.</p>
-            </div>
-        </div>
-    </div>
-    <div class="govuk-grid-column-one-third-from-desktop">
-        <div class="fcdo-card"  onclick="window.location.href='/design-system/components'">
-            <div class="fcdo-card__container">
-                <h2 class="govuk-heading-m fcdo-card__title">Components</h2>
-                <p class="fcdo-card__description">Components for building consistent user interfaces.</p>
-            </div>
-        </div>
-    </div>
-    <div class="govuk-grid-column-one-third-from-desktop">
-        <div class="fcdo-card">
-            <div class="fcdo-card__container">
-                <h2 class="govuk-heading-m fcdo-card__title">Tools</h2>
-                <p class="fcdo-card__description">View all the tools for developing FCDO projects and services.</p>
-            </div>
-        </div>
-    </div>
-</div>
+    <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary fcdo-details__summary">
+            <span class="govuk-details__summary-text">Custom FCDO styles</span>
+        </summary>
+        <div class="govuk-details__text">
+            <p class="govuk-body">
+                The file introduces FCDO specific design SCSS variable (e.g., colors, spacing, typography).
+            </p>
+            <p class="govuk-body">It includes new components or alternative styling for elements that need to align with FCDO's branding.</p>
 
+            <p class="govuk-body">For example, it may modify:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Primary color scheme (e.g., buttons, links, backgrounds)</li>
+                <li>Typography (e.g., heading font weights, text sizes)</li>
+                <li>Borders and shadows for enhanced visual differentiation</li>
+            </ul>
+
+        </div>
+    </details>
+
+    <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary fcdo-details__summary">
+            <span class="govuk-details__summary-text">BEM (Block, Element, Modifier) naming</span>
+        </summary>
+        <div class="govuk-details__text">
+            <p class="govuk-body">
+                The CSS file follows the BEM methodology to keep styles modular and maintainable.
+            </p>
+            <p class="govuk-body">Classes follow the fcdo- prefix to differentiate from govuk- classes, for example:</p>
+            <pre><code class="language-css">
+        .fcdo-button {
+        background-color: #005ea5; /* FCDO primary color */
+        color: #ffffff;
+        }
+    </code></pre>
+
+        </div>
+    </details>
+
+    <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary fcdo-details__summary">
+            <span class="govuk-details__summary-text">Overrides with minimal disruption</span>
+        </summary>
+        <div class="govuk-details__text">
+            <p class="govuk-body">
+                The file is lightweight and designed to override GOV.UK styles where necessary.
+            </p>
+            <p class="govuk-body">It ensures consistency across all FCDO services, without affecting the core GOV.UK framework.</p>
+
+            <p class="govuk-body">Here is how a standard GOV.UK button might be modified for FCDO:</p>
+
+            <pre><code class="language-css">
+        /* default GOV.UK button */
+        .govuk-button {
+            background-color: #00703c;
+        }
+        
+        /* FCDO override */
+        .fcdo-button {
+            background-color: #005ea5; /* FCDO blue */
+            border-radius: 4px;
+        }
+        </code></pre>
+        </div>
+    </details>
+
+    <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary fcdo-details__summary">
+            <span class="govuk-details__summary-text">Single source file</span>
+        </summary>
+        <div class="govuk-details__text">
+            <p class="govuk-body">
+                By maintaining one central CSS file, teams across FCDO can apply consistent styles without duplicating effort.
+            </p>
+            <p class="govuk-body">Updates to FCDO branding can be made globally by modifying this single file.</p>
+        </div>
+    </details>
 
         </div>
       </div>
