@@ -4,3 +4,11 @@
 body {
     font-family: $fcdo-font-family;
 }
+
+@import "components/page-title";
+@import "components/section-navigation";
+@import "components/page-navigation";
+@import "components/details";
+@import "components/component";
+@import "components/buttons";
+@import "components/colour";

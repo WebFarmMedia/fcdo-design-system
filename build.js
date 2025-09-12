@@ -1,23 +1,41 @@
-// scripts/build.js
+// build.js
+
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
 const fse = require('fs-extra');
 
-const TEMPLATE_DIR = path.join(__dirname, '/views');
-const OUTPUT_DIR = path.join(__dirname, '/dist');
-const ASSETS_SRC = path.join(__dirname, '/assets');
+// --- Robust import: supports either `module.exports = { navItems: [...] }`
+//     or `module.exports = [ ... ]`
+const navigationData = require('./navigation-data');
+const navItemsArray = Array.isArray(navigationData)
+  ? navigationData
+  : navigationData && Array.isArray(navigationData.navItems)
+    ? navigationData.navItems
+    : null;
+
+if (!Array.isArray(navItemsArray)) {
+  throw new Error(
+    "navigation-data.js must export either an array or { navItems: [...] }"
+  );
+}
+
+// Paths
+const TEMPLATE_DIR = path.join(__dirname, 'views');
+const OUTPUT_DIR = path.join(__dirname, 'dist');
+const ASSETS_SRC = path.join(__dirname, 'assets');
 const ASSETS_DEST = path.join(OUTPUT_DIR, 'assets');
 
+// Clean output folder
 fse.emptyDirSync(OUTPUT_DIR);
 
-// Configure nunjucks
+// Configure Nunjucks
 const env = nunjucks.configure(TEMPLATE_DIR, {
   noCache: true,
   autoescape: true
 });
 
-// Recursively walk the views directory
+// Recursively walk the views directory to get all HTML files
 function getAllHtmlFiles(dir, base = '') {
   let results = [];
   const list = fs.readdirSync(dir);
@@ -37,18 +55,43 @@ function getAllHtmlFiles(dir, base = '') {
   return results;
 }
 
-// Render all HTML files
 const pages = getAllHtmlFiles(TEMPLATE_DIR);
 
+// Render all pages
 pages.forEach(relPath => {
-  const rendered = env.render(relPath);
   const outputPath = path.join(OUTPUT_DIR, relPath);
+
+  // Build URL path for this page (Windows-safe, remove index/.html)
+  let urlPath = '/' + relPath.replace(/\\/g, '/');
+  urlPath = urlPath.replace(/index\.html$/, ''); // remove index.html
+  urlPath = urlPath.replace(/\.html$/, '');      // remove .html
+  if (urlPath === '') urlPath = '/';
+  if (urlPath.length > 1 && urlPath.endsWith('/')) urlPath = urlPath.slice(0, -1);
+
+  // First segment for section matching (same as app.js)
+  const section = urlPath.split('/')[1] || 'home';
+
+  // Determine if current section has submenus
+  const currentNavItem = navItemsArray.find(item => item.slug === section);
+  const hasSubmenus = !!(currentNavItem && currentNavItem.children && currentNavItem.children.length);
+
+  // Render with variables your templates expect
+  const rendered = env.render(relPath, {
+    navItems: navItemsArray,
+    pageSection: section, // used to set mainItem
+    currentPath: urlPath, // used by your active checks
+    hasSubmenus
+  });
+
   fse.ensureDirSync(path.dirname(outputPath));
   fs.writeFileSync(outputPath, rendered);
-  console.log(`Rendered: ${relPath}`);
+
+  console.log(`Rendered: ${relPath} (section: ${section}, path: ${urlPath})`);
 });
 
-// Copy assets
-fse.copySync(ASSETS_SRC, ASSETS_DEST);
+// Copy assets (skip SCSS)
+fse.copySync(ASSETS_SRC, ASSETS_DEST, {
+  filter: (src) => !src.includes(path.join('assets', 'scss'))
+});
 
 console.log('✅ Site built in /dist');

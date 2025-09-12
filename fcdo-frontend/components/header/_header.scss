@@ -1,5 +1,5 @@
 .fcdo-header {
-    background-color: map-get($fcdo-colours, "fcdo-blue");
+    background-color: $fcdo-color-1;
 
     &__container {
         display: flex;
@@ -7,18 +7,33 @@
 
     &__logo {
         width: 175px;
-        padding-top: map-get($fcdo-spacing, "2");
-        padding-bottom: map-get($fcdo-spacing, "2");
+        padding-top: $fcdo-spacing-2;
+        padding-bottom: $fcdo-spacing-2;
     }
 
     &__service-name {
         margin-left: auto;
-        padding-top: map-get($fcdo-spacing, "2");
-        padding-bottom: map-get($fcdo-spacing, "2");
+        padding-top: $fcdo-spacing-2;
+        padding-bottom: $fcdo-spacing-2;
         color: #fff;
     }
 
     &__link {
         display: block;
+    }
+}
+
+// dark theme styles
+[data-theme="dark"] .fcdo-header {
+    background-color: $fcdo-dark-color-1;
+}
+
+.fcdo-header__service-name a {
+    color: #fff !important;
+
+    &:focus {
+        outline: 3px solid rgba(0, 0, 0, 0);
+        color: #000;
+        background-color: $fcdo-dark-color-2;
     }
 }

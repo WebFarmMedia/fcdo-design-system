@@ -1,0 +1,211 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Components
+{% endblock %}
+
+{% block pageTitle %}
+<span class="govuk-caption-xl">Design system</span>
+<h1 class="govuk-heading-xl">Components</h1>
+{% endblock %}
+
+{% block content %}
+<h2 class="govuk-heading-l">Components</h2>
+<p class="govuk-body">The new FCDO Design System will introduce a structured approach to designing and creating components, ensuring consistency, accessibility, and efficiency across all digital services.</p>
+
+<details class="govuk-details govuk-!-margin-bottom-0">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            Component design process
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">New components in the FCDO Design System will follow a structured lifecycle, including:</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Research and discovery</h3>
+        <p class="govuk-body">Identifying user needs, accessibility requirements, and ensuring alignment with existing GOV.UK standards.</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Wireframing and prototyping</h3>
+        <p class="govuk-body">Creating low-fidelity and high-fidelity designs to visualize the component's look and behavior.</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Testing and accessibility reviews</h3>
+        <p class="govuk-body">Ensuring compliance with WCAG 2.2 accessibility standards and testing with real users.</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Development and documentation</h3>
+        <p class="govuk-body">Writing scalable, reusable CSS & JavaScript, with detailed documentation in the FCDO Design System.</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Iterative updates </h3>
+        <p class="govuk-body">Based on user feedback, data insights, and emerging best practices.</p>
+    </div>
+</details>
+
+<details class="govuk-details govuk-!-margin-bottom-0">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            Component structure
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">Each component will have:</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">HTML Structure</h3>
+        <p class="govuk-body">Identifying user needs, accessibility requirements, and ensuring alignment with existing GOV.UK standards.</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">CSS Styling</h3>
+        <p class="govuk-body">Using FCDO specific styling (e.g., fcdo-color-primary, fcdo-spacing-m) layered on top of GOV.UK styles.</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">JavaScript (if needed)</h3>
+        <p class="govuk-body"> Lightweight, progressive enhancement-based functionality for interactive elements.</p>
+    </div>
+</details>
+
+<details class="govuk-details">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            New and enhanced UI components
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">The system will introduce new and customised versions of common GOV.UK components, including:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Header</li>
+            <li>Navigation Bar</li>
+            <li>Sub Navigation</li>
+            <li>Counter</li>
+            <li>Progress Bar</li>
+            <li>Sortable Table and Filter</li>
+            <li>Add Another Item</li>
+            <li>Date Picker</li>
+            <li>Notification Badge</li>
+        </ul>
+
+    </div>
+</details>
+
+<h3 class="govuk-heading-m">Integrating Nunjucks</h3>
+<p class="govuk-body">The new FCDO Design System will eventually use Nunjucks as a templating engine to streamline the integration of reusable components. This ensures consistency across services while allowing flexibility in implementation.</p>
+<h4 class="govuk-heading-s">How Nunjucks Will Be Used in the FCDO Design System</h4>
+
+<details class="govuk-details govuk-!-margin-bottom-0">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            Reusable Component Macros
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">Each component will have a Nunjucks macro, allowing developers to include standardized elements without manually writing repetitive HTML.</p>
+        <p class="govuk-body">Example: A button component can be called using a simple macro:</p>
+        <pre class="language-liquid">
+            <code>
+from "fcdo/components/button/macro.njk" import fcdoButton
+
+fcdoButton({
+    text: "Submit",
+    href: "/submit",
+    type: "primary"
+})
+            </code>
+        </pre>
+    </div>
+</details>
+
+<details class="govuk-details govuk-!-margin-bottom-0">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            Component Configuration with Parameters
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">Each macro will accept parameters to customize attributes like text, styles, and behavior while maintaining consistency.</p>
+        <p class="govuk-body">Example: A notification banner macro might accept parameters like type (success, warning, error) and message content.</p>
+        <pre class="language-liquid">
+            <code>
+fcdoNotificationBanner({
+    type: "success",
+    text: "Your application has been submitted successfully."
+})
+            </code>
+        </pre>
+    </div>
+</details>
+
+<details class="govuk-details govuk-!-margin-bottom-0">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            Inheritance and Layouts
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">Nunjucks supports template inheritance, meaning that core layouts (e.g., a standard FCDO page structure) can be defined in a base template and extended across multiple pages.</p>
+        <pre class="language-html">
+            <code>
+{ extends "fcdo/layouts/main.njk" }
+  
+{block pageTitle}  Home - FCDO   {endblock}
+  
+{block content}
+      # content here
+{endblock}
+            </code>
+        </pre>
+    </div>
+</details>
+
+<details class="govuk-details govuk-!-margin-bottom-0">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            Dynamic Data Integration
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">Nunjucks templates can dynamically pull data from backend services, APIs, or content management systems to populate UI components.</p>
+        <p class="govuk-body">Example: Rendering a list of services dynamically:</p>
+        <pre class="language-html">
+            <code>
+{ for service in services }
+    #html code here
+{endfor}
+            </code>
+        </pre>
+    </div>
+</details>
+
+<details class="govuk-details">
+    <summary class="govuk-details__summary fcdo-details__summary">
+        <span class="govuk-details__summary-text">
+            Extending GOV.UK Components
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <p class="govuk-body">Since the FCDO Design System builds on the GOV.UK Design System, existing GOV.UK components can be extended and customized within Nunjucks templates.</p>
+        <p class="govuk-body">Example: Customizing the GOV.UK details component with FCDO styles:</p>
+        <pre class="language-html">
+            <code>
+{ from "govuk/components/details/macro.njk" import govukDetails }
+  
+govukDetails({
+    classes: "fcdo-details",
+    summaryText: "More information",
+    text: "This is additional content customized for FCDO."
+})
+            </code>
+        </pre>
+    </div>
+</details>
+
+<h3 class="govuk-heading-s">Benefits of using Nunjucks</h3>
+
+<h4 class="govuk-heading-s govuk-!-margin-bottom-0">Reusability</h4>
+<p class="govuk-body">Reduces duplication by using macros for commonly used components.</p>
+
+<h4 class="govuk-heading-s govuk-!-margin-bottom-0">Consistency</h4>
+<p class="govuk-body">Ensures all services follow the same design guidelines.</p>
+
+<h4 class="govuk-heading-s govuk-!-margin-bottom-0">Efficiency</h4>
+<p class="govuk-body">Speeds up development by providing pre-built templates.</p>
+
+<h4 class="govuk-heading-s govuk-!-margin-bottom-0">Flexibility</h4>
+<p class="govuk-body">Allows services to customize components while maintaining core design standards.</p>
+
+{% endblock %}

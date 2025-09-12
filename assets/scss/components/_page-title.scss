@@ -1,0 +1,19 @@
+.fcdo-page-title {
+    background-color: govuk-colour("light-grey");
+    padding: 30px 0 10px 0;
+
+    .govuk-caption-xl, .govuk-heading-xl {
+        margin-bottom: 0;
+    }
+}
+
+[data-theme="dark"] {
+    .fcdo-page-title {
+        background-color:#171717;
+        color: #fff;
+
+        .govuk-caption-xl, .govuk-heading-xl {
+            color: #fff;
+        }
+    }
+}
