@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>
     
-    FCDO Design System
+    Page Navigation
 
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -67,8 +67,8 @@
       <div class="govuk-grid-row govuk-!-margin-bottom-3">
         <div class="govuk-grid-column-two-thirds">
           
-    <span class="govuk-caption-xl">Design system</span>
-    <h1 class="govuk-heading-xl">Overview</h1>
+<span class="govuk-caption-xl">Components</span>
+<h1 class="govuk-heading-xl">Page Navigation</h1>
 
         </div>
       </div>
@@ -93,8 +93,16 @@
         
         
         
+          
+            
+            
+          
+            
+            
+          
+        
 
-        <li class="fcdo-section-navigation__item fcdo-section-navigation__item--active">
+        <li class="fcdo-section-navigation__item">
           <a href="/design-system" class="fcdo-section-navigation__link">Overview</a>
         </li>
 
@@ -130,6 +138,8 @@
           
             
             
+              
+            
           
             
             
@@ -142,7 +152,7 @@
           
         
 
-        <li class="fcdo-section-navigation__item">
+        <li class="fcdo-section-navigation__item fcdo-section-navigation__item--active">
           <a href="/design-system/components" class="fcdo-section-navigation__link">Components</a>
         </li>
 
@@ -177,6 +187,8 @@
     
   
     
+      
+    
   
 
 
@@ -186,11 +198,27 @@
     <ul class="fcdo-page-navigation__list">
       
         <li class="fcdo-page-navigation__item">
-          <a href="/design-system/prototyping" class="fcdo-page-navigation__link">Prototyping</a>
+          <a href="/design-system/components/header" class="fcdo-page-navigation__link">Header</a>
         </li>
       
         <li class="fcdo-page-navigation__item">
-          <a href="/design-system/prototyping-kit" class="fcdo-page-navigation__link">Prototyping Kit</a>
+          <a href="/design-system/components/navigation" class="fcdo-page-navigation__link">Navigation</a>
+        </li>
+      
+        <li class="fcdo-page-navigation__item fcdo-page-navigation__item--active">
+          <a href="/design-system/components/page-navigation" class="fcdo-page-navigation__link">Page Navigation</a>
+        </li>
+      
+        <li class="fcdo-page-navigation__item">
+          <a href="/design-system/components/card" class="fcdo-page-navigation__link">Card</a>
+        </li>
+      
+        <li class="fcdo-page-navigation__item">
+          <a href="/design-system/components/button" class="fcdo-page-navigation__link">Button</a>
+        </li>
+      
+        <li class="fcdo-page-navigation__item">
+          <a href="/design-system/components/details" class="fcdo-page-navigation__link">Details</a>
         </li>
       
     </ul>
@@ -202,60 +230,123 @@
         
         <div class="govuk-grid-column-three-quarters">
           
-    <h2 class="govuk-heading-l">The FCDO design system</h2>
-    <p class="govuk-body">The FCDO is introducing a new design system aimed at improving the digital experience for users of government services. This system is specifically designed to ensure consistency, accessibility, and usability across FCDO's digital platforms, making it easier for citizens, businesses, and government employees to interact with FCDO’s online services.</p>
+<h1 class="govuk-heading-l">Page Navigation</h1>
+<p class="govuk-body">The Page Navigation component helps users navigate around your service.</p>
+<div class="fcdo-component">
+    <div class="fcdo-component__tabs">
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+                Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#example">
+                        Example
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#html">
+                        HTML
+                    </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#nunjucks">
+                        Nunjucks
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="example">
+              <nav class="fcdo-page-navigation" role="navigation" aria-label="Tertiary Navigation" style="max-width: 250px;">
+  <div class="fcdo-page-navigation__container">
+    <ul class="fcdo-page-navigation__list">
+      <li class="fcdo-page-navigation__item">
+        <a href="#" class="fcdo-page-navigation__link">Page Link 1</a>
+      </li>
+      <li class="fcdo-page-navigation__item fcdo-page-navigation__item--active">
+        <a href="#" class="fcdo-page-navigation__link">Page Link 2</a>
+      </li>
+      <li class="fcdo-page-navigation__item">
+        <a href="#" class="fcdo-page-navigation__link">Page Link 3</a>
+      </li>
+      <li class="fcdo-page-navigation__item">
+        <a href="#" class="fcdo-page-navigation__link">Page Link 4</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <h2 class="govuk-heading-m">Why a new design system?</h2>
+            </div>
 
-    <p class="govuk-body">The introduction of the FCDO design system reflects the department's commitment to creating high-quality, user-friendly, and accessible digital services for all. By improving efficiency across teams, reducing duplication of effort, and ensuring consistency, the system should allow the department to deliver better services in less time and at a lower cost.</p>
-    <p class="govuk-body">As the digital landscape evolves, the design system will be continuously updated to incorporate best practices, feedback from users, and new technologies. Ultimately, the goal is to provide citizens and users with a seamless, efficient, and engaging experience when interacting with the FCDO online.</p>
-
-    <details class="govuk-details">
-        <summary class="govuk-details__summary fcdo-details__summary">
-        <span class="govuk-details__summary-text">Benefits of a design system</span>
-        </summary>
-        <div class="govuk-details__text">
-        <h3 class="govuk-heading-s">Consistency</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>Ensures a uniform look and feel across all platforms and touchpoints</li>
-            <li>Reduces design and development inconsistencies</li>
-            <li>Creates a shared language between designers and developers</li>
-            <li>Enhances brand recognition and trust</li>
-        </ul>
-        
-        <h3 class="govuk-heading-s">Efficiency & Speed</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>Saves time by providing reusable components and patterns</li>
-            <li>Helps teams prototype and build products faster</li>
-            <li>Reduces redundant design and development efforts</li>
-            <li>Streamlines onboarding for new team members</li>
-        </ul>
-        
-        <h3 class="govuk-heading-s">Scalability</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>Makes it easier to expand a product without redesigning from scratch</li>
-            <li>Supports multiple teams working on different aspects of the same ecosystem</li>
-            <li>Ensures a seamless experience as products grow in complexity</li>
-            <li>Facilitates cross-team collaboration and alignment</li>
-        </ul>
-        
-        <h3 class="govuk-heading-s">Accessibility & Inclusivity</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>Encourages WCAG compliance and better usability for diverse audiences</li>
-            <li>Standardizes contrast, readability, and keyboard navigation</li>
-            <li>Improves user experience for people with disabilities</li>
-            <li>Fosters a culture of inclusive design</li>
-        </ul>
-        
-        <h3 class="govuk-heading-s">Maintainability & Governance</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>Provides a single source of truth for design and development</li>
-            <li>Ensures updates are systematically applied across all products</li>
-            <li>Reduces technical debt and design inconsistencies</li>
-            <li>Encourages contributions and improvements from the entire team</li>
-        </ul>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="html">
+                <button class="fcdo-button fcdo-button--outline" type="button" onclick="copyCode()" id="copyHTML">Copy code</button>
+                <pre class="language-html">
+                    <code class="language-html" id="htmlCode">
+&lt;nav class=&quot;fcdo-page-navigation&quot; role=&quot;navigation&quot; aria-label=&quot;Page Navigation&quot;&gt;
+  &lt;div class=&quot;fcdo-page-navigation__container&quot;&gt;
+    &lt;ul class=&quot;fcdo-page-navigation__list&quot;&gt;
+        &lt;li class=&quot;fcdo-page-navigation__item&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;fcdo-page-navigation__link&quot;&gt;Page Link 1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;fcdo-page-navigation__item fcdo-page-navigation__item--active&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;fcdo-page-navigation__link&quot;&gt;Page Link 2&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;fcdo-page-navigation__item&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;fcdo-page-navigation__link&quot;&gt;Page Link 3&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;fcdo-page-navigation__item&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;fcdo-page-navigation__link&quot;&gt;Page Link 4&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+                </code>
+                </pre>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
+                <h2 class="govuk-heading-l">Nunjucks</h2>
+            </div>
         </div>
-    </details>
+    </div>
+</div>
+
+<script>
+    function copyCode() {
+        const code = document.getElementById('htmlCode').innerText;
+        const button = document.getElementById('copyHTML');
+
+        navigator.clipboard.writeText(code).then(() => {
+            button.textContent = 'Code copied';
+            //button.disabled = true;
+            setTimeout(() => {
+                button.textContent = 'Copy code';
+                button.disabled = false;
+            }, 2000);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("navigationExampleToggle");
+    const navMenu = document.getElementById("navigationExampleMenu");
+
+    if (!menuButton || !navMenu) {
+        console.error("menuButton or navMenu not found");
+        return;
+    }
+
+    menuButton.addEventListener("click", () => {
+        const isOpen = navMenu.hasAttribute("hidden") === false;
+
+        if (isOpen) {
+        navMenu.setAttribute("hidden", "");
+        menuButton.setAttribute("aria-expanded", "false");
+        } else {
+        navMenu.removeAttribute("hidden");
+        menuButton.setAttribute("aria-expanded", "true");
+        }
+    });
+    });
+
+</script>
 
         </div>
       </div>
