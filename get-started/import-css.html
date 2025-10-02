@@ -40,7 +40,7 @@
         <img src="/assets/images/fcdo-logo.svg" alt="Foreign, Commonwealth & Development Office" class="fcdo-header__logotype" />
       </a>
     </div>
-    <div class="fcdo-header__service-name">Design System - <a href="#" id="theme-toggle" class="govuk-link govuk-link--no-visited-state">Toggle Dark Mode</a></div>
+    <div class="fcdo-header__service-name">Design System <!--- <a href="#" id="theme-toggle" class="govuk-link govuk-link--no-visited-state">Toggle Dark Mode</a>--></div>
   </div>
 </header>
   <nav class="fcdo-navigation" role="navigation" aria-label="Navigation">
@@ -189,18 +189,11 @@
   <ol class="govuk-list govuk-list--number">
       <li>
         <strong>Download</strong><br>
-        Clone or download the repository directly:<br>
+        <p class="govuk-body"><a href="#" class="govuk-link">Download the repository</a> directly</p>
         <!-- <pre class="govuk-!-font-size-16"><code>git clone https://github.com/fcdo/frontend.git</code></pre> -->
       </li>
 
-      <li>
-        <strong>Using with SCSS</strong><br>
-        Copy the <code>fcdo-frontend/</code> folder into your project and import it in your main stylesheet:<br>
-        <pre class="govuk-!-font-size-16"><code>@import "fcdo-frontend/fcdo-frontend";</code></pre>
-        <!-- You can override SCSS variables before the import to customise colours, spacing, or typography. -->
-      </li>
-
-      <li>
+    <li>
         <strong>Using with CSS only</strong><br>
         If you are not using SCSS, include the compiled CSS file directly in your HTML:<br>
         <pre class="govuk-!-font-size-16"><code>&lt;link rel="stylesheet" href="/path-to/fcdo-frontend.css"&gt;</code></pre>
