@@ -1,15 +1,18 @@
-// navigation-data.js
 module.exports = {
-  navItems: [
-    { name: 'Home', slug: 'home', url: '/', children: [] },
-    { 
-      name: 'Design System', slug: 'design-system', url: '/design-system',
-      children: [
+  sections: [
+    {
+      title: 'Building Blocks',
+      items: [
         { 
-          name: 'Overview', slug: 'design-system', url: '/design-system',
+          name: 'Components', slug: 'components', url: '/design-system/components',
           children: [
-            { name: 'Prototyping', slug: 'prototyping', url: '/design-system/prototyping' },
-            { name: 'Prototyping Kit', slug: 'prototyping-kit', url: '/design-system/prototyping-kit' }
+            { name: 'About Components', slug: 'components', url: '/design-system/components' },
+            { name: 'Header', slug: 'header', url: '/design-system/components/header' },
+            { name: 'Navigation', slug: 'navigation', url: '/design-system/components/navigation' },
+            { name: 'Page Navigation', slug: 'page-navigation', url: '/design-system/components/page-navigation' },
+            { name: 'Card', slug: 'card', url: '/design-system/components/card' },
+            { name: 'Button', slug: 'button', url: '/design-system/components/button' },
+            { name: 'Details', slug: 'details', url: '/design-system/components/details' }
           ]
         },
         { 
@@ -20,15 +23,44 @@ module.exports = {
           ]
         },
         { 
-          name: 'Components', slug: 'components', url: '/design-system/components',
+          name: 'Patterns', slug: 'patterns', url: '/design-system/patterns',
           children: [
-            { name: 'Header', slug: 'header', url: '/design-system/components/header' },
-            { name: 'Navigation', slug: 'navigation', url: '/design-system/components/navigation' },
-            { name: 'Page Navigation', slug: 'page-navigation', url: '/design-system/components/page-navigation' },
-            { name: 'Card', slug: 'card', url: '/design-system/components/card' },
-            { name: 'Button', slug: 'button', url: '/design-system/components/button' },
-            { name: 'Details', slug: 'details', url: '/design-system/components/details' }
+            { name: 'Phone Numbers', slug: 'phone-numbers', url: '#' },
+            { name: 'Address', slug: 'address', url: '#' }
           ]
+        },
+         { 
+          name: 'Pages', slug: 'pages', url: '/design-system/pages',
+          children: [
+            { name: 'Internal Application', slug: 'application', url: '#' },
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Getting Started',
+      items: [
+        { 
+          name: 'Download', slug: 'download', url: '/get-started/download',
+        },
+        { 
+          name: 'Importing Assets',
+          children: [
+            { name: 'Copying Files', slug: 'assets', url: '/get-started/import-assets'},
+            { name: 'Using CSS', slug: 'css', url: '/get-started/css'},
+            { name: 'Using JavaScript', slug: 'javascript', url: '/get-started/javascript' },
+          ]
+        },
+      ]
+    },
+    {
+      title: 'About the Design System',
+      items: [
+        { 
+          name: 'Overview', slug: 'overview', url: '/design-system',
+        },
+        {
+        name: 'Benefits', slug: 'benefits', url: '/design-system/benefits',
         }
       ]
     }

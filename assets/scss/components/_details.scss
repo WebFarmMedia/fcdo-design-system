@@ -29,31 +29,31 @@
 
 [data-theme="dark"] {
     .govuk-details__summary {
-        color: $fcdo-dark-color-2;
+        color: $fcdo-dark-colour-2;
 
         &.fcdo-details__summary:before {
-            border-color: $fcdo-dark-color-2 !important;
+            border-color: $fcdo-dark-colour-2 !important;
         }
 
         &.fcdo-details__summary:hover {
-            color: $fcdo-dark-color-3 !important;
+            color: $fcdo-dark-colour-3 !important;
         }
 
         &.fcdo-details__summary:focus {
             
             &:hover {
-                color: $fcdo-dark-color-1 !important;
+                color: $fcdo-dark-colour-1 !important;
             }
             
             &:before {
-                border-color: $fcdo-dark-color-1 !important;
+                border-color: $fcdo-dark-colour-1 !important;
             }
 
 
         }
 
         &:hover:before {
-                border-color: $fcdo-dark-color-3 !important;
+                border-color: $fcdo-dark-colour-3 !important;
         }
     }
 }

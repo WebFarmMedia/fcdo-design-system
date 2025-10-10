@@ -1,5 +1,5 @@
 .fcdo-navigation {
-    background-color: $fcdo-color-1;
+    background-color: $fcdo-colour-1;
 
     &__container {
         border-top: 1px solid rgba(255, 255, 255, 0.20);
@@ -28,7 +28,7 @@
         padding: $fcdo-spacing-1 0 $fcdo-spacing-1 0;
 
         &--active {
-            border-left: 5px solid $fcdo-color-3;
+            border-left: 5px solid $fcdo-colour-3;
             padding-left: $fcdo-spacing-1;
         }
 
@@ -39,7 +39,7 @@
             &--active {
                 border-left: none;
                 padding-left: 0;
-                border-bottom: 5px solid $fcdo-color-3;
+                border-bottom: 5px solid $fcdo-colour-3;
                 color: #005ea5;
             }
         }
@@ -54,7 +54,7 @@
         &:focus-visible {
             outline: 3px solid rgba(0, 0, 0, 0);
             color: #fff;
-            background-color: $fcdo-color-2;
+            background-color: $fcdo-colour-2;
         }
     }
 
@@ -97,5 +97,5 @@
 
 // dark theme styles
 [data-theme="dark"] .fcdo-navigation {  
-     background-color: $fcdo-dark-color-1;
+     background-color: $fcdo-dark-colour-1;
 }

@@ -19,7 +19,7 @@
         border-bottom: 5px solid transparent;
 
         &:hover, &--active {
-            border-bottom: 5px solid $fcdo-dark-color-3;
+            border-bottom: 5px solid $fcdo-colour-3;
             color: #005ea5;
             cursor: pointer;
 
@@ -47,7 +47,7 @@
         &:focus-visible {
             outline: 3px solid rgba(0, 0, 0, 0);
             color: #fff;
-            background-color: $fcdo-dark-color-2
+            background-color: $fcdo-dark-colour-2
         }
     }
 }
@@ -74,7 +74,7 @@
         &:focus-visible {
             outline: 3px solid rgba(0, 0, 0, 0);
             color: #fff;
-            background-color: $fcdo-dark-color-2;
+            background-color: $fcdo-dark-colour-2;
         }
     }
 

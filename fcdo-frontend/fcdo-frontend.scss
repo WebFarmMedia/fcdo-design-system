@@ -1,10 +1,11 @@
 @import "govuk-frontend/dist/govuk";
 @import "settings/all";
+@import "helpers/all";
 @import "components/all";
 
 [data-theme="dark"] {
     body {
-        background-color: $fcdo-dark-color-1;
+        background-color: $fcdo-dark-colour-1;
         color: #fff;
     }
 

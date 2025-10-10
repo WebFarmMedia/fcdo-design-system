@@ -1,5 +1,5 @@
 .fcdo-header {
-    background-color: $fcdo-color-1;
+    background-color: $fcdo-colour-1;
 
     &__container {
         display: flex;
@@ -25,7 +25,7 @@
 
 // dark theme styles
 [data-theme="dark"] .fcdo-header {
-    background-color: $fcdo-dark-color-1;
+    background-color: $fcdo-dark-colour-1;
 }
 
 .fcdo-header__service-name a {
@@ -34,6 +34,6 @@
     &:focus {
         outline: 3px solid rgba(0, 0, 0, 0);
         color: #000;
-        background-color: $fcdo-dark-color-2;
+        background-color: $fcdo-dark-colour-2;
     }
 }

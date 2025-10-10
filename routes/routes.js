@@ -11,6 +11,36 @@ router.get('/design-system', (req, res) => {
     res.render('design-system/index.html');
 });
 
+// benefits route
+router.get('/design-system/benefits', (req, res) => {
+    res.render('design-system/benefits.html');
+});
+
+// design system route
+router.get('/get-started', (req, res) => {
+    res.render('get-started/index.html');
+});
+
+// download route
+router.get('/get-started/download', (req, res) => {
+    res.render('get-started/download.html');
+});
+
+// import css route
+router.get('/get-started/css', (req, res) => {
+    res.render('get-started/css.html');
+});
+
+// import assets route
+router.get('/get-started/import-assets', (req, res) => {
+    res.render('get-started/import-assets.html');
+});
+
+// import javascript route
+router.get('/get-started/javascript', (req, res) => {
+    res.render('get-started/javascript.html');
+});
+
 // prototyping route
 router.get('/design-system/prototyping', (req, res) => {
     res.render('design-system/prototyping.html');

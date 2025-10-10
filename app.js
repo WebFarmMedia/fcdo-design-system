@@ -1,7 +1,8 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
-const { navItems } = require('./navigation-data'); // updated name
+const { sections } = require('./navigation-data');
+
 
 const app = express();
 const PORT = 3000;
@@ -15,12 +16,18 @@ nunjucks.configure('views', {
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.use((req, res, next) => {
-  const section = req.path.split('/')[1] || 'home';
-  res.locals.pageSection = section;
+  const sectionSlug = req.path.split('/')[1] || 'home';
+  res.locals.pageSection = sectionSlug;
   res.locals.currentPath = req.path;
-  res.locals.navItems = navItems;
+  res.locals.sections = sections; // <-- updated
 
-  const currentNavItem = navItems.find(item => item.slug === section);
+  // Find the section and nav item
+  let currentNavItem;
+  for (const sec of sections) {
+    currentNavItem = sec.items.find(item => item.slug === sectionSlug);
+    if (currentNavItem) break;
+  }
+
   res.locals.hasSubmenus = currentNavItem?.children?.length > 0;
   next();
 });

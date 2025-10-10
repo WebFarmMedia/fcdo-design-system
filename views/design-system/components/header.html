@@ -6,14 +6,11 @@ Header
 
 {% block pageTitle %}
 <span class="govuk-caption-xl">Components</span>
-<h1 class="govuk-heading-xl">Header</h1>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Header</h1>
+<strong class="govuk-tag govuk-tag--orange">To be reviewed</strong>
 {% endblock %}
 
 {% block content %}
-<h1 class="govuk-heading-l">Header</h1>
-<p class="govuk-body">The Header component serves as the primary navigation and branding element across all digital products in the FCDO ecosystem.</p>
-<p class="govuk-body">It provides a consistent, accessible, and responsive framework for users to identify the FCDO brand, navigate key sections, and access essential actions such as search, language selection, and user account controls.</p>
-
 <div class="fcdo-component">
     <div class="fcdo-component__tabs">
         <div class="govuk-tabs" data-module="govuk-tabs">
@@ -31,11 +28,11 @@ Header
                         HTML
                     </a>
                 </li>
-                <li class="govuk-tabs__list-item">
+                <!-- <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#nunjucks">
                         Nunjucks
                     </a>
-                </li>
+                </li> -->
             </ul>
 
             <div class="govuk-tabs__panel" id="example">
@@ -46,20 +43,16 @@ Header
                 <button class="fcdo-button fcdo-button--outline" type="button" onclick="copyCode()" id="copyHTML">Copy code</button>
                 <pre class="language-html">
                     <code class="language-html" id="htmlCode">
-&lt;div class="govuk-tabs" data-module="govuk-tabs"&gt;
-    &lt;h2 class="govuk-tabs__title"&gt;Contents&lt;/h2&gt;
-    &lt;ul class="govuk-tabs__list"&gt;
-        &lt;li class="govuk-tabs__list-item govuk-tabs__list-item--selected"&gt;
-            &lt;a class="govuk-tabs__tab" href="#example"&gt;Example&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class="govuk-tabs__list-item"&gt;
-            &lt;a class="govuk-tabs__tab" href="#html"&gt;HTML&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class="govuk-tabs__list-item"&gt;
-            &lt;a class="govuk-tabs__tab" href="#nunjucks"&gt;Nunjucks&lt;/a&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
+&lt;header class="fcdo-header" data-module="fcdo-header"&gt;
+  &lt;div class="fcdo-header__container govuk-width-container"&gt;
+    &lt;div class="fcdo-header__logo"&gt;
+      &lt;a href="/" class="fcdo-header__link"&gt;
+        &lt;img src="/assets/images/fcdo-logo.svg" alt="Foreign, Commonwealth &amp; Development Office" class="fcdo-header__logotype" /&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="fcdo-header__service-name"&gt;Design System &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
                     </code>
                 </pre>
             </div>
@@ -73,6 +66,11 @@ Header
     </div>
 
 </div>
+
+<h1 class="govuk-heading-l">Component Information</h1>
+<p class="govuk-body">The Header component serves as the primary navigation and branding element across all digital products in the FCDO ecosystem.</p>
+<p class="govuk-body">It provides a consistent, accessible, and responsive framework for users to identify the FCDO brand, navigate key sections, and access essential actions such as search, language selection, and user account controls.</p>
+
 
 <script>
     function copyCode() {

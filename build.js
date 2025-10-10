@@ -5,18 +5,19 @@ const fs = require('fs');
 const path = require('path');
 const fse = require('fs-extra');
 
-// --- Robust import: supports either `module.exports = { navItems: [...] }`
-//     or `module.exports = [ ... ]`
+// --- Import navigation data
 const navigationData = require('./navigation-data');
 const navItemsArray = Array.isArray(navigationData)
   ? navigationData
   : navigationData && Array.isArray(navigationData.navItems)
     ? navigationData.navItems
-    : null;
+    : navigationData && Array.isArray(navigationData.sections)
+      ? navigationData.sections
+      : null;
 
 if (!Array.isArray(navItemsArray)) {
   throw new Error(
-    "navigation-data.js must export either an array or { navItems: [...] }"
+    "navigation-data.js must export either an array, { navItems: [...] }, or { sections: [...] }"
   );
 }
 
@@ -68,30 +69,37 @@ pages.forEach(relPath => {
   if (urlPath === '') urlPath = '/';
   if (urlPath.length > 1 && urlPath.endsWith('/')) urlPath = urlPath.slice(0, -1);
 
-  // First segment for section matching (same as app.js)
-  const section = urlPath.split('/')[1] || 'home';
+  // Determine top-level section from first path segment
+  const sectionSlug = urlPath.split('/')[1] || 'home';
 
-  // Determine if current section has submenus
-  const currentNavItem = navItemsArray.find(item => item.slug === section);
+  // Find current nav item if it exists
+  let currentNavItem;
+  navItemsArray.forEach(section => {
+    if (section.items) {
+      const match = section.items.find(item => item.slug === sectionSlug);
+      if (match) currentNavItem = match;
+    }
+  });
+
   const hasSubmenus = !!(currentNavItem && currentNavItem.children && currentNavItem.children.length);
 
-  // Render with variables your templates expect
+  // Render page with Nunjucks
   const rendered = env.render(relPath, {
-    navItems: navItemsArray,
-    pageSection: section, // used to set mainItem
-    currentPath: urlPath, // used by your active checks
+    sections: navItemsArray, // your template expects `sections`
+    pageSection: sectionSlug, // used to set mainItem
+    currentPath: urlPath,     // used for active checks
     hasSubmenus
   });
 
   fse.ensureDirSync(path.dirname(outputPath));
   fs.writeFileSync(outputPath, rendered);
 
-  console.log(`Rendered: ${relPath} (section: ${section}, path: ${urlPath})`);
+  console.log(`Rendered: ${relPath} (section: ${sectionSlug}, path: ${urlPath})`);
 });
 
 // Copy assets (skip SCSS)
 fse.copySync(ASSETS_SRC, ASSETS_DEST, {
-  filter: (src) => !src.includes(path.join('assets', 'scss'))
+  filter: src => !src.includes(path.join('assets', 'scss'))
 });
 
 console.log('✅ Site built in /dist');

@@ -3,20 +3,22 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-bottom: $fcdo-spacing-3;
 
     &__swatch {
         width: 40px;
         height: 40px;
-        border: 1px solid #000;
         border-radius: 100px;
     }
 
     &__name {
-        
+        @include govuk-font($size: 19);
+        font-family: $fcdo-font-family-mono;
     }
 
     &__hex {
-        margin-left: 20px;
-        font-family: monospace;
+        @include govuk-font($size: 19);
+        margin-left: $fcdo-spacing-5;
+        font-family: $fcdo-font-family-mono;
     }
 }

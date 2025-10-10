@@ -1,11 +1,11 @@
 .fcdo-component {
-    margin-top: $fcdo-spacing-7;
     margin-bottom: $fcdo-spacing-5;
-    border:1px solid $govuk-border-colour;
+    border: 1px solid $govuk-border-colour;
+    background-color: #fff;
 
     &__open {
         padding: $fcdo-spacing-3 $fcdo-spacing-4;
-        border-bottom:1px solid $govuk-border-colour;
+        border-bottom: 1px solid $govuk-border-colour;
     }
 
     &__tabs {
@@ -24,7 +24,7 @@
 
         }
 
-        li {         
+        li {
             &.govuk-tabs__list-item {
                 background-color: #fff;
 
@@ -37,7 +37,7 @@
                         position: absolute;
                         bottom: -1px;
                         left: 0;
-                        right:0;
+                        right: 0;
                         width: 100%;
                         height: 1px;
                         background-color: #fff;
@@ -49,8 +49,17 @@
                     border-left: none;
                 }
             }
+
+            .govuk-tabs__tab {
+                color: $govuk-link-colour !important;
+
+                &:focus {
+                    color: #000 !important;
+                }
+            }
         }
     }
+
     .govuk-width-container {
         margin: 0 $fcdo-spacing-3;
     }
@@ -60,24 +69,23 @@
     .fcdo-component {
 
         &__tabs {
-            li {         
-            &.govuk-tabs__list-item {
-                background-color: #202020;
-                
-                .govuk-tabs__tab {
-                    color: #fff;
+            li {
+                &.govuk-tabs__list-item {
+                    background-color: #202020;
 
-                    &:focus {
-                        color: #000;    
+                    .govuk-tabs__tab {
+                        color: #fff;
+
+                        &:focus {
+                            color: #000;
+                        }
                     }
-                }
 
-                &--selected:after {
+                    &--selected:after {
                         background-color: #202020;
                     }
+                }
             }
         }
-        }
-
     }
 }

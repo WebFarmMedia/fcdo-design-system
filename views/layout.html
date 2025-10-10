@@ -32,32 +32,36 @@
 
   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
   {% include "includes/header.html" %}
+  
+  <div class="app-layout">
+    <div class="app-layout__sidebar" id="nav">
   {% include "includes/navigation.html" %}
-
-  <div class="fcdo-page-title">
-    <div class="govuk-width-container">
-      <div class="govuk-grid-row govuk-!-margin-bottom-3">
-        <div class="govuk-grid-column-two-thirds">
-          {% block pageTitle %}
-          {% endblock %}
+    </div>
+    <div class="app-layout__content" id="main-content">
+      {% if currentPath == "/" %}
+        <div class="app-page-title app-page-title--home">
+      {% else %}
+        <div class="app-page-title">
+      {% endif %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            {% block pageTitle %}{% endblock %}
+          </div>
+    </div>
+  </div>
+    <div class="app-page-content">
+       <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            {% block content %}{% endblock %}
+          </div>
         </div>
-      </div>
+    </div>
     </div>
   </div>
 
-   {% include "includes/section-navigation.html" %}
-  <div class="govuk-width-container">
-    <main class="govuk-main-wrapper" id="main-content">
-      <div class="govuk-grid-row">
-        {% if hasSubmenus %}
-          <div class="govuk-grid-column-one-quarter">
-              {% include "includes/page-navigation.html" %}
-          </div>
-        {% endif %}
-        <div class="{% if hasSubmenus %}govuk-grid-column-three-quarters{%else%}govuk-grid-column-full{%endif%}">
-          {% block content %}{% endblock %}
-        </div>
-      </div>
+  
+
+
      
     </main>
   </div>
@@ -94,8 +98,10 @@
       </div>
     </div>
   </footer>
+  <script src="/assets/javascript/fcdo-design-system.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  
 </body>
 
 </html>
