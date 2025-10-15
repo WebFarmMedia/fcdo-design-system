@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>
     
-    FCDO Design System
+    FCDO Design System - FCDO Frontend HTML Template
 
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -504,6 +504,8 @@
     
     
     
+    
+    
 
     
 
@@ -514,10 +516,10 @@
 
       
       
-      <button class="app-nav__toggle ">Importing Assets</button>
+      <button class="app-nav__toggle app-nav__toggle--active">Importing Assets</button>
       
 
-      <ul class="app-nav__sublist ">
+      <ul class="app-nav__sublist app-nav__sublist--show">
         
     
     
@@ -593,7 +595,7 @@
       
       
       
-      <a href="/get-started/html-template" class="app-nav__link ">
+      <a href="/get-started/html-template" class="app-nav__link app-nav__link--active">
         Use Template
       </a>
       
@@ -670,8 +672,8 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             
-    <span class="govuk-caption-xl">Design system</span>
-    <h1 class="govuk-heading-xl">Overview</h1>
+    <span class="govuk-caption-xl">Get Started</span>
+    <h1 class="govuk-heading-xl">FCDO Frontend HTML Template</h1>
 
           </div>
     </div>
@@ -680,23 +682,28 @@
        <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             
-    <h1 class="govuk-heading-xl">Get started with the FCDO Front End</h1>
+  <h1 class="govuk-heading-l">FCDO Frontend HTML Template</h1>
+  <p class="govuk-body">Use this simple template to get started with FCDO Design System</p>
+  <pre class="govuk-!-font-size-16"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" class="govuk-template"&gt;
+  &lt;head&gt;
+    &lt;title&gt;FCDO and GOV.UK&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"&gt;
+    &lt;link rel="stylesheet" href="/assets/css/govuk-frontend-5.13.0.min.css"&gt;
+    &lt;link rel="stylesheet" href="/assets/css/fcdo-frontend.min.css"&gt;
+  &lt;/head&gt;
+  &lt;body class="govuk-template__body"&gt;
+    &lt;script&gt;document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');&lt;/script&gt;
+    &lt;script type="module" src="/assets/javascript/govuk-frontend-5.13.0.min.js"&gt;&lt;/script&gt;
+    &lt;script type="module"&gt;
+      import { initAll } from '/assets/javascript/govuk-frontend-5.13.0.min.js'
+      initAll()
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
 
-    <p class="govuk-body-l">
-      The FCDO Front End provides a consistent set of tools, components, and patterns to help teams build services that align with the Foreign, Commonwealth & Development Office’s design standards.</p>
-    <p class="govuk-body">
-       It is designed to make development faster, more accessible, and easier to maintain by providing:
-    </p>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Reusable UI components</li>
-      <li>Consistent design system</li>
-      <li>Developer-friendly setup</li>
-    </ul>
-
-    <p class="govuk-body">
-      Whether you are creating a new service or updating an existing one, this guide will walk you through installation, configuration, and usage so you can start building with confidence.
-    </p>
 
           </div>
         </div>
