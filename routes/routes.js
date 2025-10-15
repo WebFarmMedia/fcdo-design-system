@@ -36,6 +36,11 @@ router.get('/get-started/import-assets', (req, res) => {
     res.render('get-started/import-assets.html');
 });
 
+// html template route
+router.get('/get-started/html-template', (req, res) => {
+    res.render('get-started/html-template.html');
+});
+
 // import javascript route
 router.get('/get-started/javascript', (req, res) => {
     res.render('get-started/javascript.html');

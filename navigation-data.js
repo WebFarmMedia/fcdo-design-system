@@ -49,6 +49,7 @@ module.exports = {
             { name: 'Copying Files', slug: 'assets', url: '/get-started/import-assets'},
             { name: 'Using CSS', slug: 'css', url: '/get-started/css'},
             { name: 'Using JavaScript', slug: 'javascript', url: '/get-started/javascript' },
+            { name: 'Use Template', slug: 'html-template', url: '/get-started/html-template' },
           ]
         },
       ]
