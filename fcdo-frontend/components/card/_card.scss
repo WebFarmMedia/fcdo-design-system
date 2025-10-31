@@ -32,8 +32,16 @@
 
 [data-theme="dark"] {
     .fcdo-card {
-        background-color: #171717;
+        background-color: $fcdo-dark-colour-1;
         border: none;
-        border-bottom: 5px solid $fcdo-colour-3;
+        border-bottom: 5px solid $fcdo-colour-2;
+    }
+}
+
+[data-theme="highContrast"] {
+    .fcdo-card {
+        background-color: $fcdo-high-contrast-colour-1;
+        border: 3px solid $fcdo-high-contrast-colour-4;
+        border-bottom: 5px solid $fcdo-high-contrast-colour-4;
     }
 }

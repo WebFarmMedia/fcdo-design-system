@@ -96,6 +96,39 @@
 }
 
 // dark theme styles
-[data-theme="dark"] .fcdo-navigation {  
-     background-color: $fcdo-dark-colour-1;
+[data-theme="dark"] {
+    .fcdo-navigation {  
+        background-color: $fcdo-dark-colour-1;
+
+        &__item {
+            &:hover {
+                border-bottom: 5px solid $fcdo-dark-colour-2;
+            }
+
+            &--active {
+                border-bottom: 5px solid $fcdo-dark-colour-2;
+            }
+        }
+    }
+}
+
+// dark theme styles
+[data-theme="highContrast"] {
+    .fcdo-navigation {  
+        background-color: $fcdo-high-contrast-colour-1;
+
+        &__item {
+            &:hover {
+                border-bottom: 5px solid $fcdo-high-contrast-colour-4;
+            }
+
+            &--active {
+                border-bottom: 5px solid $fcdo-high-contrast-colour-4;
+            }
+        }
+
+        &__link {
+            color: $fcdo-high-contrast-colour-2 !important;
+        }
+    }
 }

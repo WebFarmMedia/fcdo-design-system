@@ -14,7 +14,7 @@
     &:focus {
         border-color: $govuk-focus-colour;
         color: $govuk-text-colour;
-        background-color:  $govuk-focus-colour;
+        background-color: $govuk-focus-colour;
         box-shadow: 0 2px 0 $govuk-text-colour;
     }
 
@@ -29,5 +29,38 @@
         &:hover {
             background-color: #fff;
         }
+
+        &:focus {
+            background-color: $govuk-focus-colour;
+        }
+    }
+}
+
+[data-theme="highContrast"] {
+    .fcdo-button {
+        background-color: $fcdo-high-contrast-colour-1;
+        border: 1px solid #fff;
+        border-bottom: 5px solid $fcdo-high-contrast-colour-4;
+
+        &:focus {
+            border-color: $fcdo-high-contrast-colour-3;
+            background-color: $fcdo-high-contrast-colour-4;
+            box-shadow: none;
+        }
+
+        &--outline {
+         background-color: $fcdo-high-contrast-colour-1;
+        border: 1px solid #fff;
+        border-bottom: 5px solid $fcdo-high-contrast-colour-4;
+        color: #fff;
+
+        &:focus {
+            border-color: $fcdo-high-contrast-colour-3;
+            background-color: $fcdo-high-contrast-colour-4;
+            box-shadow: none;
+            color: $govuk-text-colour;
+        }
+    }
+
     }
 }

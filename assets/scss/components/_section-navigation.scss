@@ -55,7 +55,7 @@
 
 [data-theme="dark"] {
     .fcdo-section-navigation {
-       background-color: #171717;
+       background-color: $fcdo-dark-colour-1;
 
        &__link {
         display: inline-block;

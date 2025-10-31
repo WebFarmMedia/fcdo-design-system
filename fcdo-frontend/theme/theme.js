@@ -2,25 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById("theme-toggle");
     const root = document.documentElement;
 
-    // load saved preference
-    if (localStorage.getItem("theme") === "dark") {
-        root.setAttribute("data-theme", "dark");
+    // Load saved preference or detect system default
+    let theme = localStorage.getItem("theme");
+    if (!theme) {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "highContrast";
     }
+    applyTheme(theme);
 
-    // auto-detect system preference if nothing saved
-    if (!localStorage.getItem("theme")) {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            root.setAttribute("data-theme", "dark");
-        }
-    }
-
-    toggle.addEventListener("click", () => {
-        if (root.getAttribute("data-theme") === "dark") {
-            root.removeAttribute("data-theme");
-            localStorage.setItem("theme", "light");
-        } else {
-            root.setAttribute("data-theme", "dark");
-            localStorage.setItem("theme", "dark");
-        }
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault(); // prevent page jump
+        theme = theme === "dark" ? "highContrast" : "dark";
+        applyTheme(theme);
+        localStorage.setItem("theme", theme);
+        toggle.textContent = theme === "dark" ? "Toggle High Contrast" : "Toggle Dark Mode";
     });
+
+    function applyTheme(theme) {
+        if (theme === "dark") {
+            root.setAttribute("data-theme", "dark");
+        } else {
+            root.setAttribute("data-theme", "highContrast");
+        }
+        toggle.textContent = theme === "dark" ? "Toggle High Contrast" : "Toggle Dark Mode";
+    }
 });

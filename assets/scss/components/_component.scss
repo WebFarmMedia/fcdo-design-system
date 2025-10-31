@@ -67,22 +67,49 @@
 
 [data-theme="dark"] {
     .fcdo-component {
+        background-color: $fcdo-dark-colour-1;
 
         &__tabs {
             li {
                 &.govuk-tabs__list-item {
-                    background-color: #202020;
+                    background-color:$fcdo-dark-colour-1;
 
                     .govuk-tabs__tab {
-                        color: #fff;
+                        color: #fff !important;
 
                         &:focus {
-                            color: #000;
+                            color: #000 !important;
                         }
                     }
 
                     &--selected:after {
-                        background-color: #202020;
+                        background-color: $fcdo-dark-colour-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+[data-theme="highContrast"] {
+    .fcdo-component {
+        background-color: $fcdo-high-contrast-colour-1;
+
+        &__tabs {
+            li {
+                &.govuk-tabs__list-item {
+                    background-color: $fcdo-high-contrast-colour-1;
+
+                    .govuk-tabs__tab {
+                        color: $fcdo-high-contrast-colour-2 !important;
+
+                        &:focus {
+                            color: #000 !important;
+                        }
+                    }
+
+                    &--selected:after {
+                        background-color: $fcdo-high-contrast-colour-1;
                     }
                 }
             }

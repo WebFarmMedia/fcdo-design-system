@@ -38,12 +38,13 @@
     }
 }
 
+// dark theme styles
 [data-theme="dark"] {
     .fcdo-page-navigation {
-        background-color: #171717;
+        background-color: $fcdo-dark-colour-1;
 
          &__container {
-            border-top: #171717
+            border-top: $fcdo-dark-colour-1;
         }
 
         &__item {
@@ -53,12 +54,12 @@
 
         &:hover, &--active {
             border-left: none;
-            border-left: 5px solid $fcdo-dark-colour-3;
+            border-left: 5px solid $fcdo-dark-colour-2;
             color: #005ea5;
             background-color: $fcdo-dark-colour-1;
 
             a {
-                color: $fcdo-dark-colour-3;
+                color: $fcdo-dark-colour-2;
             }
         }
     }
@@ -69,6 +70,44 @@
             &:hover {
                 color: $fcdo-dark-colour-3;
             }
+
+            &:focus-visible {
+                outline: 3px solid rgba(0, 0, 0, 0);
+                color: #fff;
+                background-color: $fcdo-dark-colour-2;
+            }
+        }
+    }
+}
+
+// high contrast theme styles
+[data-theme="highContrast"] {
+    .fcdo-page-navigation {
+        background-color: $fcdo-high-contrast-colour-1;
+
+         &__container {
+            border-top: $fcdo-high-contrast-colour-1;
+        }
+
+        &__item {
+            list-style-type: none;
+            padding: 5px 0 5px 10px;
+            border-left: 5px solid transparent;
+
+        &:hover, &--active {
+            border-left: none;
+            border-left: 5px solid $fcdo-high-contrast-colour-3;
+            color: $fcdo-high-contrast-colour-3;
+            background-color: $fcdo-high-contrast-colour-1;
+
+            a {
+                color: $fcdo-high-contrast-colour-3;
+            }
+        }
+    }
+
+        &__link {
+            color: $fcdo-high-contrast-colour-2;
 
             &:focus-visible {
                 outline: 3px solid rgba(0, 0, 0, 0);

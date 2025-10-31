@@ -21,11 +21,22 @@
 
 [data-theme="dark"] {
     .app-page-title {
-        background-color:#171717;
+        background-color:$fcdo-dark-colour-1;
         color: #fff;
 
         .govuk-caption-xl, .govuk-heading-xl {
             color: #fff;
+        }
+    }
+}
+
+[data-theme="highContrast"] {
+    .app-page-title {
+        background-color:$fcdo-high-contrast-colour-1;
+        color: $fcdo-high-contrast-colour-2 !important;
+
+        .govuk-caption-xl, .govuk-heading-xl,.govuk-body {
+            color: $fcdo-high-contrast-colour-2 !important;
         }
     }
 }

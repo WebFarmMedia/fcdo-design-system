@@ -90,6 +90,21 @@
         }    
            
     }
+
+    &__theme-list {
+        list-style: none;
+        margin: 0 0 0 auto;
+        padding: 0;
+        display: flex;
+        gap: $fcdo-spacing-2;
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+    }
+
 }
 
 // dark theme styles
@@ -104,5 +119,26 @@
         outline: 3px solid rgba(0, 0, 0, 0);
         color: #000;
         background-color: $fcdo-dark-colour-2;
+    }
+}
+
+[data-theme="highContrast"] {
+    .app-header {
+        background-color: $fcdo-high-contrast-colour-1;
+        border-bottom: $fcdo-spacing-2 solid $fcdo-high-contrast-colour-4;
+
+        &__logo {
+            background: $fcdo-high-contrast-colour-4;
+        }
+
+        &__service-name a {
+            color: $fcdo-high-contrast-colour-4 !important;
+
+            &:focus {
+                outline: 3px solid $fcdo-high-contrast-colour-4;
+                color: #000 !important;
+                background-color: $fcdo-high-contrast-colour-3;
+            }
+        }
     }
 }
